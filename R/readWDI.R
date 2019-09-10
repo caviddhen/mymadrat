@@ -25,7 +25,8 @@
 readWDI<-function(subtype){
   load("WDI.rda")
    wdi$country <- NULL
-  wdi <- as.magpie(reshape2::melt(wdi,id.vars = c("iso2c","year")),spatial=1,temporal=2,tidy=TRUE,replacement =".")
+  wdi <- as.magpie(melt(wdi,id.vars = c("iso2c","year")),
+                   spatial=1,temporal=2,tidy=TRUE,replacement =".")
   wdi <- wdi[,,subtype]
   return(wdi)
 }

@@ -20,7 +20,7 @@ convertWDI<-function(x,subtype){
   WDI_data <- WDI::WDI_data
 
   # changing scale of indicators
-  if (subtype %in% c("SP.POP.TOTL","NY.GDP.MKTP.PP.KD","NY.GDP.MKTP.PP.CD","NY.GDP.MKTP.CD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN")) {
+  if (subtype %in% c("SP.POP.TOTL","NY.GDP.MKTP.PP.KD", "NV.AGR.TOTL.CD", "NY.GDP.MKTP.PP.CD","NY.GDP.MKTP.CD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN")) {
     x <- x/1000000
 
 #Kosovo added to Serbia
