@@ -8,7 +8,7 @@ David Chen
 In this exercise, we will practice reading in and transforming input data through MADRaT. We will create our own MADRat-based package for data input processing, and create the standar set of functions that allow for reading in standardized input data. For this example, we will use World Bank World Development Indicator (WDI) data, with the WDI library for easy direct download.
 
 1. New "mymadrat" Package
--------------------------
+=========================
 
 First, create a new package through the "New Project-&gt; New Directory-&gt; R Package" option in RStudio and call it "mymadrat". Add the following script saved as madrat.R to the newly created R folder.
 
@@ -28,7 +28,7 @@ First, create a new package through the "New Project-&gt; New Directory-&gt; R P
 ```
 
 2. MADRaT Functions - Exercise
-------------------------------
+==============================
 
 We will create new download, read, and convert functions for WDI indicators Population, GDP, Employment rate, Employment share in Agriculture, and Agricultural GDP. Each indicator should be a separate parameter within each function. Note that each function needs to be named as a file and as a function with the wrapper, for example, readWDI.R
 
@@ -142,7 +142,8 @@ return(x)}
   
 ```
 
-### 3. calcOutput
+3. calcOutput
+=============
 
 Magclass objects lend themselves easily to calculations between them. The calcOutput wrapper function calls the functions used to transform input data, called as calcOutput("type", "subtype", ...)
 
