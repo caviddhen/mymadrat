@@ -2,7 +2,8 @@
 title: "MADRaT Exercise"
 author: "David Chen"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: rmarkdown::html_vignette    
+keep_md: true
 vignette: >
   %\VignetteIndexEntry{MADRat exercise}
   %\VignetteEngine{knitr::rmarkdown}
@@ -163,10 +164,10 @@ Use the read functions we just wrote to calculate agricultural GDP as a percenta
 ```{r, echo = TRUE, eval=FALSE}
 calcAgGDP <- function(){
 
-readSource("WDI", subtype="NY.GDP.MKTP.KD")
+readSource("WDI", subtype="NY.GDP.MKTP.KD", aggregate=FALSE)
 
 #note that by default, readSource also converts; otherwise set convert=FALSE
-  
+
 }
 
 ```

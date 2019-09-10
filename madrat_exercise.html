@@ -138,11 +138,10 @@ downloadWDI &lt;-<span class="st"> </span><span class="cf">function</span>(...){
 <span class="kw">library</span>(WDI)
 
 <span class="co"># Download these indicators, by creating a vector of indicators to put into WDI():</span>
-<span class="co"># &quot;NY.GDP.MKTP.KD&quot; National GDP in 2010 USD</span>
+<span class="co"># &quot;NY.GDP.MKTP.CD&quot; National GDP in current USD</span>
 <span class="co"># &quot;SP.POP.TOTL&quot; Total population</span>
-<span class="co"># &quot;SL.EMP.TOTL.SP.ZS&quot; Employment ratio</span>
 <span class="co"># &quot;SL.AGR.EMPL.ZS&quot; Employment in agriculture as % of total employment</span>
-<span class="co"># &quot;NV.AGR.TOTL.KD&quot; Agricultural GDP in 2010 USD</span>
+<span class="co"># &quot;NV.AGR.TOTL.CD&quot; Agricultural GDP in current USD</span>
 
 <span class="co">#Save the downloaded data as a .Rda file as the last step of the function</span>
 <span class="kw">save</span>()
@@ -226,15 +225,16 @@ x &lt;-<span class="st"> </span><span class="kw">toolCountryFill</span>()
 </div>
 <div id="calcoutput" class="section level3">
 <h3>3. calcOutput</h3>
-<p>Magclass objects lend themselves easily to calculations between them. Use the read functions we just wrote to calculate agricultural GDP as a percentage of total gdp, using a new calcOutput function. What is Germany’s share of Agricultural GDP in 2010?</p>
+<p>Magclass objects lend themselves easily to calculations between them. The calcOutput wrapper function calls the functions used to transform input data, called as calcOutput(“type”, “subtype”, …)</p>
+<p>Use the read functions we just wrote to calculate agricultural GDP as a percentage of total gdp, using a new calcOutput function.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">calcAgGDP &lt;-<span class="st"> </span><span class="cf">function</span>(){
 
-<span class="kw">readSource</span>(<span class="st">&quot;WDI&quot;</span>, <span class="dt">subtype=</span><span class="st">&quot;NY.GDP.MKTP.KD&quot;</span>)
+<span class="kw">readSource</span>(<span class="st">&quot;WDI&quot;</span>, <span class="dt">subtype=</span><span class="st">&quot;NY.GDP.MKTP.KD&quot;</span>, <span class="dt">aggregate=</span><span class="ot">FALSE</span>)
 
 <span class="co">#note that by default, readSource also converts; otherwise set convert=FALSE</span>
-  
+
 }</code></pre></div>
-<p>After the function is written and built, call calc functions through the calcOutput(“type”) wrapper. Try it now with the calcAgGDP function.</p>
+<p>After the function is written and built, call calc functions through the calcOutput(“type”) wrapper. Try it now with the calcAgGDP function. What is Germany’s share of Agricultural GDP in 2010?</p>
 <p>All functions are saved in the inputdata/cache file after the first run, increasing efficiency. This means that for any updates to functions, the older cached function needs to be deleted. Cache is toggled with setConfig(forcecache=TRUE)</p>
 </div>
 </div>
