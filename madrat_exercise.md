@@ -158,4 +158,6 @@ readSource("WDI", subtype="NY.GDP.MKTP.KD", aggregate=FALSE)
 
 After the function is written and built, call calc functions through the calcOutput("type") wrapper. Try it now with the calcAgGDP function. What is Germany's share of Agricultural GDP in 2010?
 
+(By default, calcOutput functions will aggregate to the regional level.)
+
 All functions are saved in the inputdata/cache file after the first run, increasing efficiency. This means that for any updates to functions, the older cached function needs to be deleted. Cache is toggled with setConfig(forcecache=TRUE)
